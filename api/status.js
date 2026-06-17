@@ -1,6 +1,6 @@
 function checkUserAccess() {
   // TODO: Integrar com API de verificação de acesso
-  return true;
+  return false;
 }
 
 module.exports = (req, res) => {
