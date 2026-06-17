@@ -1,10 +1,13 @@
-/**
- * Verifica o status de acesso do usuário
- * @returns {boolean} - true se o usuário tem acesso, false caso contrário
- */
 function checkUserAccess() {
   // TODO: Integrar com API de verificação de acesso
   return true;
 }
 
-module.exports = checkUserAccess;
+module.exports = (req, res) => {
+  const hasAccess = checkUserAccess();
+
+  res.status(200).json({
+    access: hasAccess,
+    status: hasAccess ? "active" : "blocked",
+  });
+};
